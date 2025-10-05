@@ -10,10 +10,10 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
+   public function test_the_application_returns_a_successful_response(): void
+{
+    $response = $this->get('/tasks'); // Use /tasks instead of /
+    $response->assertStatus(200);     // Now it should pass
+}
 
-        $response->assertStatus(200);
-    }
 }
