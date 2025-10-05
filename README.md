@@ -1,61 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-10.x-red)](https://laravel.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.x-blue)](https://www.php.net/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-username/task-manager/actions)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
-## About Laravel
+A simple **Task Manager** web application built with **Laravel** that allows users to create, manage, and toggle tasks efficiently. This project includes automated tests using **PHPUnit** to ensure functionality.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Create tasks with a title and status.
+- Toggle tasks between completed and not completed.
+- Position-based task ordering.
+- Automated testing for core functionalities using PHPUnit.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Quick Start
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Follow these steps to see Task Manager in action quickly:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone the repository and set up dependencies**
+bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+composer install
+npm install
+npm run dev
+cp .env.example .env
+Configure your database in .env
 
-## Laravel Sponsors
+ini
+Copy code
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=your_password
+Run migrations and seed data
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+bash
+Copy code
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+Serve the application
 
-### Premium Partners
+bash
+Copy code
+php artisan serve
+Open http://localhost:8000 in your browser.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Screenshots / Demo
+Create Task:
 
-## Contributing
+Toggle Task Status:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Task List Ordering:
 
-## Code of Conduct
+(Replace the above images/GIFs with actual ones from your app.)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Running Tests
+Automated tests are included to ensure all functionalities work correctly:
 
-## Security Vulnerabilities
+bash
+Copy code
+php artisan test
+You should see all tests passing if the setup is correct.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Technologies Used
+PHP 8.x
 
-## License
+Laravel 10.x
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MySQL
+
+PHPUnit
+
+Composer & NPM
+
+Project Structure
+app/Models – Eloquent models (e.g., Task.php)
+
+app/Http/Controllers – Controllers for handling requests
+
+database/migrations – Database schema definitions
+
+tests/Feature – Feature tests for application functionality
+
+tests/Unit – Unit tests for smaller components
+
+Contributing
+Feel free to fork the repository and submit pull requests. Ensure tests pass before submitting changes.
+
+### Screenshots / Demo
+Create Task Page: 
+![Create Task](Screenshots/create-task.png)  
+*This screenshot shows how to add a new task with title and status.*
+
+**Edit Task Page:**  
+![Edit Task](Screenshots/edit-task.png)  
+*This screenshot shows how to update an existing task.*
+
+**Task List / Index Page:**  
+![Task List](Screenshots/task-index.png)  
+*This screenshot shows all tasks, their status, and position-based ordering.*
